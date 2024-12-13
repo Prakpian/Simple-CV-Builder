@@ -1,0 +1,43 @@
+nav {
+    border-bottom: 2px solid black;
+    height: 4rem;
+    place-content: center;
+}
+
+.nav-wrapper {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+ul {
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
