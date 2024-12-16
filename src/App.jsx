@@ -1,14 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
+import UserDetails from './UserDetails'
 
 function App() {
+  const [menuOpen,setMenuOpen] = useState(false)
 
+  const toggleMenu = () => {
+      setMenuOpen(!menuOpen)
+  }
   return (
     <>
-    <Navbar/>
+    <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen}/>
+    <UserDetails/>
     </>
   )
 }
