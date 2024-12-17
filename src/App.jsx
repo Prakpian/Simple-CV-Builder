@@ -9,6 +9,7 @@ function App() {
   const toggleMenu = () => {
       setMenuOpen(!menuOpen)
   }
+
   return (
     <>
     <Navbar toggleMenu={toggleMenu} menuOpen={menuOpen}/>

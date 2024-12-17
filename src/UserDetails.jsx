@@ -1,6 +1,32 @@
 import './styles/UserDetails.css'
+import PersonalDetail from './PersonalDetail'
+import { useState } from 'react'
+import EducationDetail from './EducationDetail'
 
 export default function UserDetails() {
+      const [personalDetail,setPersonalDetail] = useState({firstName: '', lastName: '', profession: '', email: '', phoneNumber: '', linkedin: '', location: '', summary: '',})
+      const personalDetailUpdate = (e) => {
+        setPersonalDetail({...personalDetail, [e.target.name] : e.target.value})
+      }
+    
+      const [educationList,setEducationList] = useState([{schoolName: '', courseDegree: '', startDate: '', endDate: ''}])
+      const educationUpdate = (e,index) => {
+        const update = [...educationList]
+        update[index][e.target.name] = e.target.value;
+        setEducationList(update)
+      }
+
+      const addEducation = () => {
+        setEducationList([...educationList, {schoolName: '', courseDegree: '', edStartDate: '', edEndDate: ''}])
+      }
+
+      const deleteEducation = (index) => {
+        if(educationList.length !== 1) {
+        const newArray = educationList.filter((_,i) => i !== index);
+        setEducationList(newArray)
+        }
+      }
+
     return (
         <div className='container'>
             <section>
@@ -11,45 +37,8 @@ export default function UserDetails() {
                     <div className='layoutBox'></div>
                 </div>
             </section>
-            <section>
-                <h1 className='section-title'>Personal Details</h1>
-                <div className='box'>
-                    <div className='detail-grid'>
-                        <div>
-                            <label htmlFor="firstname">First name</label>
-                            <input type="text" id='firstname'/>
-                        </div>
-                        <div>
-                            <label htmlFor="lastname">Last name</label>
-                            <input type="text" id='lastname' />
-                        </div>
-                        <div>
-                            <label htmlFor="profession">Profession</label>
-                            <input type="text" id='profession' />
-                        </div>
-                        <div>
-                            <label htmlFor="email">Email</label>
-                            <input type="text" id='email' />
-                        </div>
-                        <div>
-                            <label htmlFor="phone-number">Phone number</label>
-                            <input type="text" id='phone-number'/>
-                        </div>
-                        <div>
-                            <label htmlFor="linkedin">Linkedin</label>
-                            <input type="text" id='linkedin'/>
-                        </div>
-                        <div>
-                            <label htmlFor="location">Location</label>
-                            <input type="text" id='location'/>
-                        </div>
-                    </div>
-                    <div className='summary'>
-                        <label htmlFor="summary">Summary</label>
-                        <textarea name="" id="summary"></textarea>
-                    </div>
-                </div>
-            </section>
+            <PersonalDetail personalDetail={personalDetail} personalDetailUpdate={personalDetailUpdate}/>
+            <EducationDetail educationList={educationList} educationUpdate={educationUpdate} addEducation={addEducation} deleteEducation={deleteEducation}/>
         </div>
     )
 }
