@@ -1,8 +1,27 @@
+body {
+    background-color: rgb(245, 245, 245);
+}
+
 .container {
     max-width: 1000px;
     margin-inline: auto;
-    height: 1000px;
     padding: 2rem;
+}
+
+.small-button {
+    width: auto;
+    margin: 0;
+    border: none;
+}
+
+.big-button {
+    width: 100%;
+    margin-top: 2rem;
+    border: none;
+}
+
+input,textarea {
+    padding: 0.5em;
 }
 
 /* Layout list */
@@ -49,16 +68,48 @@
     margin-top: 0.7rem;
 }
 
-.summary {
+.textarea-input {
     display: grid;
     margin-top: 2rem;
     gap: 0.7rem;
     font-weight: bold;
 }
 
-.summary textarea {
+.textarea-input textarea {
     height: 20vh;
 }
+
+/* Work experience */
+
+.single-input input{
+    width: 100%;
+    height: 2rem;
+    margin-top: 0.7rem;
+    margin-bottom: 2rem;
+}
+
+.single-input {
+    font-weight: bold;
+}
+
+/* Skill & Language */
+
+.sm-input {
+    height: 2rem;
+    flex-grow: 1;
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.list div {
+    display: flex;
+    gap: 1rem;
+}
+
 
 @media screen and (max-width: 500px) {
     .layoutList {
@@ -68,12 +119,8 @@
     .detail-grid {
         grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
     }
-}
 
-
-/* Education */
-
-.box button {
-    margin-top: 2rem;
-    width: 100%;
+    .sm-input {
+        width: 100%;
+    }
 }

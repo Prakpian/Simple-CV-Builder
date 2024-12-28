@@ -6,6 +6,7 @@
     width: 100%;
     background-color: white;
     top: 0;
+    z-index: 99;
 }
 
 .nav-wrapper {
@@ -15,7 +16,7 @@
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
-    padding-inline: 2rem;
+    padding-inline: 1vw;
     height: 4rem;
 }
 
@@ -26,7 +27,7 @@
     align-items: center;
 }
 
-li {
+.nav-a li {
     list-style: none;
     cursor: pointer;
 }

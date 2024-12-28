@@ -22,7 +22,7 @@ export default function PersonalDetail({personalDetail,personalDetailUpdate}) {
                         </div>
                         <div>
                             <label htmlFor="phone-number">Phone number</label>
-                            <input type="number" name='phoneNumber' id='phone-number'value={personalDetail.phoneNumber} onChange={(e) => personalDetailUpdate(e)}/>
+                            <input type="text" name='phoneNumber' id='phone-number'value={personalDetail.phoneNumber} onChange={(e) => personalDetailUpdate(e)}/>
                         </div>
                         <div>
                             <label htmlFor="linkedin">Linkedin</label>
@@ -30,10 +30,10 @@ export default function PersonalDetail({personalDetail,personalDetailUpdate}) {
                         </div>
                         <div>
                             <label htmlFor="location">Location</label>
-                            <input type="text" name='location' id='location' value={personalDetail.location} onChange={(e) => personalDetailUpdate(e)}/>
+                            <input type="text" name='location' id='location' placeholder="City, County" value={personalDetail.location} onChange={(e) => personalDetailUpdate(e)}/>
                         </div>
                     </div>
-                    <div className='summary'>
+                    <div className='textarea-input'>
                         <label htmlFor="summary">Summary</label>
                         <textarea name="summary" id="summary" value={personalDetail.summary} onChange={(e) => personalDetailUpdate(e)}></textarea>
                     </div>

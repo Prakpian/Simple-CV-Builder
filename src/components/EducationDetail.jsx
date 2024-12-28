@@ -1,3 +1,5 @@
+import Button from "./Button"
+
 export default function EducationDetail({educationList,educationUpdate,addEducation,deleteEducation}) {
     return (
         <section>
@@ -23,8 +25,8 @@ export default function EducationDetail({educationList,educationUpdate,addEducat
                                 <input type="text" name="edEndDate" placeholder='MM/YYYY or Present' value={education.edEndDate} onChange={(e) => educationUpdate(e,index)}/>
                             </div>
                         </div>
-                        <button onClick={() => addEducation()}>+</button>
-                        <button onClick={() => deleteEducation(index)}>Delete</button>
+                        <Button text={'+'} className={'big-button'} onClick={() => addEducation()}/>
+                        <Button text={'Delete'} className={'big-button'} onClick={() => deleteEducation(index)}/>
                     </div>
                     )
                 })}
